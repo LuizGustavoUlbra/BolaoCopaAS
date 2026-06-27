@@ -1,9 +1,13 @@
 const express = require('express');
+const loginRoutes = require('./routes/loginRoutes');
 
 const app = express();
 
 // Middleware para permitir que a API receba requisições no formato JSON
 app.use(express.json());
+
+// Rotas da API
+app.use('/api', loginRoutes);
 
 // Rota de teste simples para verificar se a API está no ar
 app.get('/', (req, res) => {
