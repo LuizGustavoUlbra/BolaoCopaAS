@@ -1,5 +1,7 @@
 const express = require('express');
 const loginRoutes = require('./routes/loginRoutes');
+const jogosRoutes = require('./routes/jogosRoutes');
+const palpitesRoutes = require('./routes/palpitesRoutes');
 
 const app = express();
 
@@ -8,6 +10,8 @@ app.use(express.json());
 
 // Rotas da API
 app.use('/api', loginRoutes);
+app.use('/api', jogosRoutes);
+app.use('/api', palpitesRoutes);
 
 // Rota de teste simples para verificar se a API está no ar
 app.get('/', (req, res) => {
